@@ -43,4 +43,29 @@ router.get("/google/callback",passport.authenticate("google", {
   })
 );
 
+router.get("/github", passport.authenticate("github", 
+    { 
+        scope: ["profile"],
+        'session': true
+    }));
+
+router.get("/github/callback",passport.authenticate("github", {
+    successRedirect: CLIENT_URL,
+    failureRedirect: "/login/failed",
+  })
+);
+
+router.get("/facebook", passport.authenticate("facebook", 
+    { 
+        scope: ["profile"],
+        'session': true
+    }));
+
+router.get("/facebook/callback",passport.authenticate("facebook", {
+    successRedirect: CLIENT_URL,
+    failureRedirect: "/login/failed",
+  })
+);
+
+
 module.exports = router

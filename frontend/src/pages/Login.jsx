@@ -27,7 +27,7 @@ const Login = () => {
                     <img src={Google} alt="" className='icon'/>
                     Google
                 </div>
-                <div className="loginButton github">
+                <div className="loginButton github" onClick={github}>
                     <img src={Github} alt="" className='icon'/>
                     Github
                 </div>
